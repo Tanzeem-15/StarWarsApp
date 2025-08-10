@@ -10,10 +10,7 @@ export default function LoginForm({ navigation }) {
     const { status, error } = useSelector(state => state.auth);
 
     const handleSubmit = () => {
-        dispatch(login({ username: username.trim(), password: password.trim() }))
-            .unwrap()
-            .then(() => navigation.replace('Search'))
-            .catch(() => { });
+        dispatch(login({ username: username.trim(), password: password.trim() })).unwrap().then(() => navigation.replace('Search')).catch(() => { });
     };
 
     return (
